@@ -33,8 +33,6 @@ Route::post("add-book",[bookController::class,"addData"]);
 Route::delete("delete/{listBook}",[bookController::class,"Delete"]);
 Route::put("edit-buku/{listBook}",[bookController::class,"editBuku"]);
 
-// Route::post("list-book",[bookController::class,"postBook"]);
-
 //kategori CRUD
 Route::post("add-kategori",[kategoriController::class,"addKategori"]);
 Route::get("kategori",[kategoriController::class,"allKategori"]);

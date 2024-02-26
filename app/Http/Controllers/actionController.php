@@ -18,7 +18,7 @@ class actionController extends Controller
         $isUserHasBorrowed = collect($action)->filter(function ($data) use ($user_id) {
             return $data['user_id'] == $user_id && $data["actifity"] === "pinjam";
         });
-        if($user_id > 5){
+        if($user_id > 5){  //inisiasi user dengan id 1-5 (untuk history peminjaman)
             return "user id tidak terdaftar di server";
         }else if ($buku == null || $buku->status == 'dipinjam'){
             return response()->json([
@@ -54,14 +54,12 @@ class actionController extends Controller
         $book = listBook::where("id" , $id)->get();
         $statusBuku = $book[0]->status;
         
-        if($user_id > 5){  //validasi user
+        if($user_id > 5){  //validasi user 
             return "user id tidak terdaftar di server";
         }else if ($statusBuku ==  'tersedia'){ //validasi double action
             return response()->json([
                 "msg" => "buku ini belum dipinjam"
             ]);
-        // }else if($book[0]->status == ""){
-        //     return 
         }else if ($findAction){
             $findAction[0]->update([
                 "actifity" => "buku telah dikembalikan"

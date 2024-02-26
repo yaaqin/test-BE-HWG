@@ -114,47 +114,5 @@ class bookController extends Controller
        ], 200);
     }
     
-    //add book with validator
-    // public function postBook(ValAddBook $request){
-        // $book = new listBook();
-        // $book->id = $request->input('id');
-        // $book->nama = $request->input('nama');
-        // $book->kategory_id = $request->input('kategory_id');
-        // $book->status = $request->input('status');
     
-        // $book->save();
-    
-        // return "Book added successfully!";
-        // $validator = Validator::make($request->all(), [
-
-        //     'id' => 'required|num|max:32',
-        //     'nama' => 'required|string|max:191',
-        //     'kategory_id' => 'required|integer|max:191',
-        //     'status' => 'required|string|max:191'
-        // ]);
-        // if($validator->fails()){ 
-        //     return response()->json([
-        //         "status" => 422,
-        //         "errors" => $validator->messages()
-        //     ], 422);
-        // }else {
-        //     $result = book::create([
-        //         'nama' => $request->nama,
-        //         'kategory' => $request->kategory,
-        //         'status' => $request->status,
-        //     ]);
-
-        //     if($book){
-        //         return response()->json([
-        //             "status" => 200,
-        //             "msg" => 'book added successfully'
-        //         ], 200);
-        //     }else {
-        //         return response()->json([
-        //             "status" => 500,
-        //             "msg" => 'Something Wrong!!'
-        //         ], 500);
-        //     }
-        // }
-    // }
 }
