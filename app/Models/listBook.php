@@ -5,18 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class transaksi extends Model
+class listBook extends Model
 {
     use HasFactory;
 
-    protected $table = 'book';
+    protected $table = 'listBook';
 
     protected $fillable = [
         "id",
-        'user_id',
-        'book_id',
+        'nama',
+        'kategory_id',
         'status',
-        'start_date',
-        'end_date'
     ];
 }
