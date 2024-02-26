@@ -72,11 +72,12 @@ class bookController extends Controller
         $response = listBook::create($data);
 
         return response()->json([
-            "status" => 201,
+            "status" => 200,
             "msg" => 'your book success to added'
-           ], 201);
+           ], 200);
     }
 
+    // edit buku => categori id dan nama
     function editBuku(Request $request, listBook $listBook){
         if ($request->has('kategory_id') && $request->has('nama')) {
             $listBook->update($request->all());
@@ -105,7 +106,7 @@ class bookController extends Controller
         }
     }
 
-    //delete book
+    //delete buku
     function Delete(listBook $listBook){
        $book->delete();
        return response()->json([

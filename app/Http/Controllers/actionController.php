@@ -48,8 +48,6 @@ class actionController extends Controller
     function restoreBuku($id, $user_id){
         $findAction = actifity::where('actifity', "pinjam")->get();
 
-        // return $findAction;
-
         $action = actifity::all();
         $book = listBook::where("id" , $id)->get();
         $statusBuku = $book[0]->status;
